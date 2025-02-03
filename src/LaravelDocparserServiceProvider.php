@@ -7,7 +7,6 @@ namespace Ziming\LaravelDocparser;
 use Illuminate\Support\Facades\Http;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ziming\LaravelDocparser\Commands\LaravelDocparserCommand;
 
 class LaravelDocparserServiceProvider extends PackageServiceProvider
 {

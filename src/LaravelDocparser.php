@@ -10,15 +10,16 @@ use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 
-final readonly class LaravelDocparser {
-
+final readonly class LaravelDocparser
+{
     public static function make(): self
     {
-        return new self();
+        return new self;
     }
 
     /**
      * @see https://docparser.com/api/#list-document-parsers?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function listDocumentParsers(): PromiseInterface|Response
@@ -29,6 +30,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#list-parser-model-layouts?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function listParserModelLayouts(string $parserId): PromiseInterface|Response
@@ -39,6 +41,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#import-documents?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function uploadDocumentFromLocalPath(string $parserId, string $filePath, ?string $remoteId = null): PromiseInterface|Response
@@ -52,6 +55,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#import-documents?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function uploadDocumentByContent(string $parserId, string $fileContent, ?string $fileName = null, ?string $remoteId = null): PromiseInterface|Response
@@ -66,6 +70,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#import-documents?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function fetchDocumentFromUrl(string $parserId, string $url, ?string $remoteId = null): PromiseInterface|Response
@@ -79,6 +84,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#document-status?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function documentStatus(string $parserId, string $documentId): PromiseInterface|Response
@@ -89,6 +95,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#get-data-of-one-document?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function getDataOfOneDocument(string $parserId, string $documentId, ?string $format = null, ?bool $includeChildren = null): PromiseInterface|Response
@@ -102,6 +109,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#get-data-of-multiple-documents?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function getDataOfMultipleDocuments(string $parserId, ?string $format = null, ?string $list = null, ?int $limit = null, ?CarbonInterface $date = null, ?string $remoteId = null, ?bool $includeProcessingQueue = null, ?string $sortBy = null, ?string $sortOrder = null): PromiseInterface|Response
@@ -121,6 +129,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#re-parse-data?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function reparseData(string $parserId, array $documentIds): PromiseInterface|Response
@@ -133,6 +142,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#re-integrate-data?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function reIntegrateData(string $parserId, array $documentIds): PromiseInterface|Response
@@ -145,6 +155,7 @@ final readonly class LaravelDocparser {
 
     /**
      * @see https://docparser.com/api/#authentication?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function pingV1Api(): PromiseInterface|Response
@@ -155,7 +166,9 @@ final readonly class LaravelDocparser {
 
     /**
      * May not work, just adding since v1 has a ping method
+     *
      * @see https://docparser.com/api/#authentication?ref=iavng
+     *
      * @throws ConnectionException
      */
     public function pingV2Api(): PromiseInterface|Response
@@ -163,5 +176,4 @@ final readonly class LaravelDocparser {
         return Http::docparser()
             ->get('/v2/ping');
     }
-
 }
