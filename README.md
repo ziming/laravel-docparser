@@ -1,69 +1,63 @@
-# :package_description
+# Laravel package for Docparser
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-<!--delete-->
----
-This repo can be used to scaffold a Laravel package. Follow these steps to get started:
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ziming/laravel-docparser.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-docparser)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-docparser/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ziming/laravel-docparser/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-docparser/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-docparser/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-docparser.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-docparser)
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Have fun creating your package.
-4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-<!--/delete-->
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Laravel Package for [Docparser](https://docparser.com/?ref=iavng). An awesome and user friendly document parser SaaS.
+
+
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/:package_name.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/:package_name)
+You can support me by becoming a customer of Docparser through my referral link: 
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+[Docparser](https://docparser.com/?ref=iavng)
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
+composer require ziming/laravel-docparser
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
+php artisan vendor:publish --tag="laravel-docparser-config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    'base_url' => env('DOCPARSER_BASE_URL', 'https://api.docparser.com/'),
+    'api_key' => env('DOCPARSER_API_KEY'),
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
 ```
 
 ## Usage
 
 ```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
+$docparser = new Ziming\LaravelDocparser::make();
+echo $docparser->pingV1Api();
 ```
+
+Look at the source code of `src/LaravelDocparser.php` for more methods (link below):
+
+[LaravelDocparser.php](https://github.com/ziming/laravel-docparser/blob/main/src/LaravelDocparser.php)
+
+To learn more about what each method does in more detail, please refer to the [Docparser API documentation](https://docparser.com/api/?iavng).
+
+## Other Resources to Get Started
+To learn more about Docparser, I recommend the following resources:
+
+- [Docparser Features](https://docparser.com/features?ref=iavng)
+- [Docparser Pricing](https://docparser.com/pricing?ref=iavng)
+- [Docparser Blog on Extracting Data from PDF](https://docparser.com/blog/extract-data-from-pdf/?ref=iavng)
+- [Docparser Blog on Zonal OCR](https://docparser.com/blog/zonal-ocr/?ref=iavng)
 
 ## Testing
 
@@ -85,7 +79,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [ziming](https://github.com/ziming)
 - [All Contributors](../../contributors)
 
 ## License
