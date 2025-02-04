@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-docparser/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-docparser/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-docparser.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-docparser)
 
-Laravel Package for [Docparser](https://docparser.com/?ref=iavng). An awesome and user friendly document parser SaaS.
+Laravel Package for [Docparser](https://docparser.com/?ref=iavng). A user friendly document parser SaaS.
 
 
 
