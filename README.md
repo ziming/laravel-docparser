@@ -42,11 +42,11 @@ return [
 
 ```php
 $docparser = new Ziming\LaravelDocparser::make();
-echo $docparser->pingV1Api();
+echo $docparser->ping();
 
 // Alternatively, you can use the facade
 use Ziming\LaravelDocparser\Facades\LaravelDocparser;
-LaravelDocparser::pingV1Api();
+LaravelDocparser::ping();
 ```
 
 Look at the source code of `src/LaravelDocparser.php` for more methods (link below):

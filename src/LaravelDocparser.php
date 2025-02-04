@@ -158,22 +158,9 @@ final readonly class LaravelDocparser
      *
      * @throws ConnectionException
      */
-    public function pingV1Api(): PromiseInterface|Response
+    public function ping(): PromiseInterface|Response
     {
         return Http::docparser()
             ->get('/v1/ping');
-    }
-
-    /**
-     * May not work, just adding since v1 has a ping method
-     *
-     * @see https://docparser.com/api/#authentication?ref=iavng
-     *
-     * @throws ConnectionException
-     */
-    public function pingV2Api(): PromiseInterface|Response
-    {
-        return Http::docparser()
-            ->get('/v2/ping');
     }
 }
