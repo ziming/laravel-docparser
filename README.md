@@ -42,11 +42,14 @@ return [
 
 ```php
 $docparser = new Ziming\LaravelDocparser::make();
-echo $docparser->ping();
+echo $docparser->fetchDocumentFromUrl($parserId, $url);
+```
+
+```php
 
 // Alternatively, you can use the facade
 use Ziming\LaravelDocparser\Facades\LaravelDocparser;
-LaravelDocparser::ping();
+LaravelDocparser::fetchDocumentFromUrl($parserId, $url);
 ```
 
 Look at the source code of `src/LaravelDocparser.php` for more methods (link below):
